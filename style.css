@@ -1,0 +1,537 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #141414;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== VARIÁVEIS ===== */
+:root {
+    --primary: #e50914;
+    --primary-dark: #b2070f;
+    --dark: #141414;
+    --dark-light: #1f1f1f;
+    --dark-lighter: #0f0f0f;
+    --gray: #666;
+    --gray-light: #aaa;
+    --white: #ffffff;
+    --gold: #ffd700;
+    --success: #4caf50;
+    --error: #f44336;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #000000;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--white);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    background: var(--primary);
+}
+
+.nav-links a.active {
+    background: var(--primary);
+}
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    margin-top: 80px;
+    padding: 40px 0;
+}
+
+/* ===== TÍTULO ===== */
+.page-title {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.page-title span {
+    color: var(--primary);
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+/* ===== ALERTS ===== */
+.alert {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: rgba(76, 175, 80, 0.15);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.alert-success a {
+    color: var(--success);
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+.alert-error {
+    background: rgba(244, 67, 54, 0.15);
+    border: 1px solid var(--error);
+    color: var(--error);
+}
+
+/* ===== FORM WRAPPER ===== */
+.form-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== FORM BOX ===== */
+.form-box {
+    flex: 1;
+    background: var(--dark-light);
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.form-icon {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--gray-light);
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gray-light);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.required {
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--dark-lighter);
+    border: 2px solid #333;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: #1a1a1a;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ===== FORM ROW ===== */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ===== BUTTON ===== */
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+    width: 280px;
+    background: var(--dark-light);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #333;
+    height: fit-content;
+}
+
+.info-box h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.info-box h3 span {
+    color: var(--primary);
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+    color: var(--gray-light);
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #000;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer p {
+    color: var(--gray);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .form-wrapper {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-box {
+        width: 100%;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+}
+
+/* LOGIN E CADASTRO */
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#141414;
+    color:white;
+}
+.auth-box{
+    background:#1f1f1f;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+.auth-box h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#e50914;
+}
+
+.auth-box input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:6px;
+    background:#2d2d2d;
+    color:white;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.auth-box input:focus{
+    outline:none;
+    border:1px solid #e50914;
+}
+
+.auth-box button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#e50914;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.auth-box button:hover{
+    background:#c40812;
+}
+
+.auth-box a{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#e50914;
+    text-decoration:none;
+}
+
+.auth-box a:hover{
+    text-decoration:underline;
+}
+
+.mensagem{
+    text-align:center;
+    margin-bottom:15px;
+    color:#4CAF50;
+}
+
+.erro{
+    text-align:center;
+    margin-bottom:15px;
+    color:#ff4d4d;
+}
+
+/*Paginas Específicas De Cada Filme*/
+
+/* CONTAINER PRINCIPAL UTILIZANDO CSS GRID */
+.avaliacao-container {
+    display: grid;
+    /* Define duas colunas: a primeira se adapta ao conteúdo (máx 300px) e a segunda pega o resto */
+    grid-template-columns: minmax(200px, 300px) 1fr; 
+    gap: 40px; /* Espaço de separação entre as colunas (Grid Gap) */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    align-items: start; /* Alinha os blocos pelo topo */
+}
+
+/* BARRA LATERAL (Coluna 1 do Grid) */
+.sidebar {
+    background-color: #141414; /* Tom cinza escuro para destacar o bloco */
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid #e50914; /* Detalhe em vermelho na borda superior */
+    text-align: center;
+}
+
+/* Imagem da capa do filme */
+.sidebar img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Título do filme na lateral */
+.sidebar h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Informações como ano, diretor, nota */
+.sidebar p {
+    font-size: 0.95rem;
+    color: #b3b3b3; /* Cinza claro para textos secundários */
+    margin: 8px 0;
+    text-align: left;
+}
+
+.sidebar p strong {
+    color: #e50914; /* Destaca os títulos em vermelho */
+}
+
+
+/* CONTEÚDO PRINCIPAL (Coluna 2 do Grid - No Meio da Página) */
+.main-content {
+    background-color: #141414;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.main-content h3 {
+    color: #e50914; /* Títulos das seções em Vermelho CinePlus */
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 8px;
+}
+
+.main-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    margin-bottom: 30px;
+}
+
+/* SEÇÃO DE COMENTÁRIOS */
+.comentarios-section {
+    margin-top: 40px;
+}
+
+.comentarios-section hr {
+    border: 0;
+    border-top: 1px solid #222;
+    margin-bottom: 20px;
+}
+
+/* Estilização da caixa de texto */
+.comentarios-section textarea {
+    width: 100%;
+    background-color: #222; /* Fundo do input escuro */
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: none; /* Impede o usuário de deformar a caixa */
+}
+
+/* Foco ao clicar na caixa de texto */
+.comentarios-section textarea:focus {
+    border-color: #e50914; /* Borda fica vermelha ao clicar */
+    outline: none;
+}
+
+/* Botão de Enviar (Estilo igual ao "Ver Catálogo" do seu print) */
+.comentarios-section button {
+    background-color: #e50914; /* Vermelho CinePlus */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Efeito hover no botão */
+.comentarios-section button:hover {
+    background-color: #b80710; /* Tom de vermelho mais escuro */
+}
+
+/* Mensagens de sucesso ou erro do PHP */
+p[style*="color: green"] {
+    background-color: rgba(0, 128, 0, 0.2);
+    padding: 10px;
+    border-left: 4px solid green;
+    border-radius: 4px;
+}
+
+p[style*="color: red"] {
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-left: 4px solid red;
+    border-radius: 4px;
+}
+
+/* RESPONSIVIDADE: Se a tela for pequena (celular), vira uma coluna só */
+@media (max-width: 768px) {
+    .avaliacao-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
